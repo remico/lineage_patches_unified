@@ -1,0 +1,39 @@
+From d6e3d4ce0b29839344726f0676828f01b02d1281 Mon Sep 17 00:00:00 2001
+From: remico <remicollab@gmail.com>
+Date: Fri, 28 Jan 2022 18:41:59 +0200
+Subject: further fix gapps
+
+---
+ gapps.mk | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/gapps.mk b/gapps.mk
+index 0b95c33..67b6077 100644
+--- a/gapps.mk
++++ b/gapps.mk
+@@ -23,18 +23,18 @@ PRODUCT_COPY_FILES += \
+ 	device/phh/treble/empty-permission.xml:system/etc/permissions/com.google.android.camera.experimental2016.xml \
+ 	device/phh/treble/empty-permission.xml:system/etc/permissions/com.google.android.camera.experimental2017.xml
+ 
+-PRODUCT_PACKAGE_OVERLAYS += device/phh/treble/overlay-gapps
+ GAPPS_VARIANT := pico
+ DONT_DEXPREOPT_PREBUILTS := true
+ WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+ GAPPS_FORCE_PACKAGE_OVERRIDES := true
+ GAPPS_FORCE_BROWSER_OVERRIDES := true
+-GAPPS_FORCE_WEBVIEW_OVERRIDES := true
+ PRODUCT_PACKAGES += \
+        Chrome \
+        CalculatorGoogle \
+-       CalendarGooglePrebuilt \
+-       phh-overrides
++       CalendarGooglePrebuilt
++
++GAPPS_EXCLUDED_PACKAGES += \
++               GoogleTTS
+ 
+ $(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
+ endif
+-- 
+2.25.1
+

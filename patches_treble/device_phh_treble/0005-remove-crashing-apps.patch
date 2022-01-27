@@ -1,0 +1,26 @@
+From ba590ac5dc756bccd9254a0afab758379bf13f84 Mon Sep 17 00:00:00 2001
+From: remico <remicollab@gmail.com>
+Date: Thu, 27 Jan 2022 23:43:26 +0200
+Subject: remove crashing PrebuiltDeskClockGoogle, LatinImeGoogle
+
+---
+ gapps.mk | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/gapps.mk b/gapps.mk
+index 15e12a9..0b95c33 100644
+--- a/gapps.mk
++++ b/gapps.mk
+@@ -33,9 +33,7 @@ GAPPS_FORCE_WEBVIEW_OVERRIDES := true
+ PRODUCT_PACKAGES += \
+        Chrome \
+        CalculatorGoogle \
+-       PrebuiltDeskClockGoogle \
+        CalendarGooglePrebuilt \
+-       LatinImeGoogle \
+        phh-overrides
+ 
+ $(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
+-- 
+2.25.1
+
